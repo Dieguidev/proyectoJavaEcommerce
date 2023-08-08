@@ -1,4 +1,4 @@
-/*package com.dieguidev.ecommercejava.persistence.entity;
+package com.dieguidev.ecommercejava.persistence.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -22,4 +22,3 @@ public class CategoryEntity {
     @Column(nullable = false,columnDefinition = "TINYINT")
     private Boolean estate;
 }
-*/
