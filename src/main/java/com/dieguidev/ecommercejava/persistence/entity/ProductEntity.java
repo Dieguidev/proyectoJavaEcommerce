@@ -26,7 +26,7 @@ public class ProductEntity {
     @Column(nullable = false,unique = true,length = 150)
     private String barCode;
 
-    @Column(name = "sale_price",nullable = false, columnDefinition = "Decimal(16,2)")
+    @Column(name = "sale_price",nullable = false, columnDefinition = "DECIMAL(16,2)")
     private Double salePrice;
 
     @Column(name = "stock_quantity", nullable = false)
