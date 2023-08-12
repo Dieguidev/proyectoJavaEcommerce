@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+
+
 @Entity
 @Table(name = "buys_products")
 @IdClass(BuysProductId.class)
@@ -28,4 +30,15 @@ public class BuysProductEntity {
 
     @Column(nullable = false, columnDefinition = "TINYINT")
     private Boolean estate;
+
+    //relaciones
+
+    @ManyToOne
+    @JoinColumn(name = "id_product",referencedColumnName = "id_product",updatable = false,insertable = false)
+    private ProductEntity product;
+
+    @ManyToOne
+    @JoinColumn(name = "id_buys",referencedColumnName = "id_buys",updatable = false,insertable = false)
+    private BuysEntity buys;
+
 }

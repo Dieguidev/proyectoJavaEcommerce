@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "buys")
@@ -32,4 +33,15 @@ public class BuysEntity {
 
     @Column(columnDefinition = "CHAR(1)")
     private String state;
+
+    //relaciones
+
+    @ManyToOne
+    @JoinColumn(name = "id_customer", referencedColumnName = "id_customer",insertable = false,updatable = false)
+    private CostumerEntity costumer;
+
+    @OneToMany(mappedBy = "buys")
+    private List<BuysProductEntity> buysProducts;
+
+
 }

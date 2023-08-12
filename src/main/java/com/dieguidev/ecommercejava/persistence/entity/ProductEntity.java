@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
 
 @Entity
 @Table(name = "product")
@@ -34,6 +36,16 @@ public class ProductEntity {
 
     @Column(columnDefinition = "TINYINT",nullable = false)
     private Boolean estate;
+
+    //relaciones
+
+    @ManyToOne
+    @JoinColumn(name = "id_category", referencedColumnName = "id_category",updatable = false,insertable = false)
+    private CategoryEntity category;
+
+
+    @OneToMany(mappedBy = "product")
+    private List<BuysProductEntity> buysProducts;
 
 
 }

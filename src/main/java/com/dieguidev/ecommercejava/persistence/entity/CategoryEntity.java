@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
 @Entity
 @Table(name = "category")
 @Getter
@@ -21,4 +23,11 @@ public class CategoryEntity {
 
     @Column(nullable = false,columnDefinition = "TINYINT")
     private Boolean estate;
+
+    //relaciones
+
+    @OneToMany(mappedBy = "category")
+    private List<ProductEntity> products;
+
+
 }

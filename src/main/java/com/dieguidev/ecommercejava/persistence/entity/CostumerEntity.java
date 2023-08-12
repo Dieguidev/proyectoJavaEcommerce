@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
 @Entity
 @Table(name = "costumer")
 @Getter
@@ -12,9 +14,8 @@ import lombok.Setter;
 @NoArgsConstructor
 public class CostumerEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_customer", nullable = false)
-    private Integer idCustomer;
+    private String idCustomer;
 
     @Column(nullable = false, length = 40)
     private String name;
@@ -30,6 +31,11 @@ public class CostumerEntity {
 
     @Column(length = 70, unique = true )
     private String email;
+
+    //relaciones
+
+    @OneToMany(mappedBy = "costumer")
+    private List<BuysEntity> buys;
 
 
 }
