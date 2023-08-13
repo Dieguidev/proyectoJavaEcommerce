@@ -25,9 +25,9 @@ public class CategoryEntity {
     private Boolean estate;
 
     //relaciones
-
+/*
     @OneToMany(mappedBy = "category")
     private List<ProductEntity> products;
-
+*/
 
 }
